@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nellie's Website :D</title>
+        <!-- hint: remember to change your page title! -->
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" href="styles/style.css">
+
+        <!-- MapLibreGL's css-->
+         <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" />
+
+           <!-- MapLibreGL's JavaScript-->
+        <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+    </head>
+
+    <body>
+        <header>
+            Nellie's Website! :D <!-- hint: you can make a menu with other links here if you'd like -->
+        </header>
+
+        <main>
+            <!-- hint: majority of your lab assignment can go here -->
+            <div class="portfolio">
+                <!-- Portfolio content goes here -->
+                 <h1>About me!</h1>
+
+                 <br>
+
+                    <p> Hello everyone! My name is Nellie Nguyen, and I'm a rising sophomore with a major in Neuroscience. 
+                        As a critical digital map maker, I aim to amplify and empower communities and voices that are not 
+                        always represented in typical maps. I hope to identify gaps in other existing maps in order to fill them
+                        and create my own maps to offer new perspectives. 
+                    </p>
+                
+                    <br>
+                    
+                <h2>My future goals!</h2>
+
+                    <br>
+
+
+                    <p> I'm hoping to apply to MD/PhD programs after undergrad in order to work as a neurologist in a clinical setting
+                        while conducting research in developing methods to detect and treat neurological disorders. In the healthcare
+                        field, I want to have a focus on serving patients of underrepresented communities, specifically those who 
+                        struggle with language barriers when receiving medical treatment. I hope to mitigate the issues they face when 
+                        prioritizing their health through not only improving my own Vietnamese fluency, but also learning fundamental phrases
+                        in other languages like Spanish, Arabic, Tagalog, etc. as they relate to medicine.
+                    </p>
+                    
+                    <br>
+
+                <h2>Some facts about me!
+
+                </h2>
+
+                    <br>
+
+                    <ul type="square" style ="padding-left:40px">
+                        <li>
+                            I love getting sweet treats (specifically sweet drinks)! I enjoy trying new cafes or boba shops with friends, and my 
+                            go to orders are usually matcha lattes (or anything matcha flavored) and jasmine tea w/ sea salt foam/cheese foam. 
+                        </li>
+                        <li>
+                            Some of my favorite dishes come from Thai, Japanese, Korean, and Vietnamese cuisines. I really enjoy foods with umami flavors, 
+                            including seafood, seaweed, and many types of broths! 
+                        </li>
+                        <li>
+                            The music I enjoy listening to consists of Kpop, Pop, Instrumental/Classical, and sometimes EDM!
+                        </li>
+                     </ul>
+
+                     <br>
+
+                <h2>"Places I have visited!"
+                </h2>
+                    <ol style="padding-left:40px">
+                        <li>
+                            <a href="https://www.google.com/maps/place/Waikiki,+Honolulu,+HI+96815/@21.2801297,-157.8532979,14z/data=!3m1!4b1!4m6!3m5!1s0x7c006df4e5c129af:0x4633ddc52a688878!8m2!3d21.2793462!4d-157.8291847!16zL20vMGc3Z2Y?entry=ttu" target="_blank"> 
+                                O'ahu, Hawaii (Waikiki Beach)</a>
+                        </li>
+                        <li>
+                            <a href="https://www.google.com/maps/place/Manhattan,+New+York,+NY/@40.7589461,-74.2642115,11z/data=!3m1!4b1!4m6!3m5!1s0x89c2588f046ee661:0xa0b3281fcecc08c!8m2!3d40.7830603!4d-73.9712488!16zL20vMGNjNTY?entry=ttu" target="_blank"> 
+                                New York City, New York (Manhattan)</a>
+                        </li>
+                        <li>
+                            <a href="https://www.google.com/maps/place/Miami+Beach,+FL/@25.8103129,-80.1814269,13z/data=!3m1!4b1!4m6!3m5!1s0x88d9a6172bfeddb9:0x37be1741259463eb!8m2!3d25.790654!4d-80.1300455!16zL20vMHJubXk?entry=ttu" target="_blank"> 
+                                Miami, Florida </a> 
+                        </li>
+                    </ol>
+
+                    <br>
+
+                    <h3> 
+                        Here is what I look like :0 
+                    </h3>
+                    <p>
+                        &emsp; I'm wearing a Gudetama shirt LOL
+                    </p>
+
+                    <br>
+
+                 <img src="NellieNguyenHeadshot.png" alt="This is what I look like :0">
+            </div>
+            <div id="map" class="maplibregl-map">
+                <!-- Map will be inserted here -->
+                 <div class="maplibregl-canvas container maplibregl-interactive">
+
+                 </div>
+                 <div class="maplibregl-control-container"> 
+                    <div class="maplibregl-ctrl-top-left"></div>
+                    <div class="maplibregl-ctrl-top-right"></div>
+                    <div class="maplibregl-ctrl-bottom-left"></div>
+                    <div class="maplibregl-ctrl-bottom-right"></div>
+            </div>
+        </div>
+        </main>
+
+        <div id="footer">
+            Copyright(2024)
+        </div>
+        <script src="js/init.js"></script>
+    </body>
+</html>
