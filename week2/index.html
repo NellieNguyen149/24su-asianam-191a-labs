@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nellie Nguyen's Lab #2</title>
+        <!-- hint: remember to change your page title! -->
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" href="styles/style.css">
+
+        <!-- MapLibreGL's css-->
+        <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" />
+
+        <!-- MapLibreGL's JavaScript-->
+        <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+    </head>
+
+    <body>
+        <header>
+            Lab 2: My favorite cafes in Orange County! 
+            <!-- hint: you can make a menu with other links here if you'd like -->
+             <br>
+        </header>
+
+        <main>
+            <div class="portfolio">
+                <!-- Portfolio content goes here -->
+                 <h2>POV Nellie tries to convince you to try her faves... </h2>
+                 <br>
+                 <ul type="square" style ="padding-left:40px">
+                     <li>Phin Smith: A well-known local business specializing in Phin drip Vietnamese coffee, Matcha lattes, and many other classics. </li>
+                     <li>7 Leaves: Founded by a family of first-generation immigrants, they started from inspirational, 
+                        humble beginnings to serve iconic drinks including: Vietnamese coffee, sea salt Jasmine tea, and  green thai tea.</li>
+                     <li>Brewstory: A recent cafe that opened up near the beach! I heard they import matcha directly from Japan :0</li>
+                     <br> 
+                 </ul>
+                 <div id="contents"></div>
+                 <img src="cafe.jpg" alt="Insert aesthetic cafe photo here LOL">
+            </div>
+                <div id="map" class="maplibregl-map">
+                    <!-- Map will be inserted here -->
+                    <div id="map"></div>
+                </div>
+        </main>
+        
+        <div id="footer">
+            Copyright(2024)
+        </div>
+        <script src="js/init.js"></script>
+    </body>
+</html>
