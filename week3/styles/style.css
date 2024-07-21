@@ -228,6 +228,10 @@ nav {
     color: white;
   }
 
+  nav a:visited {
+    color: white;
+  }
+
   input[type="checkbox"] {
     display: none;
   }
