@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello World with MapLibreGl</title>
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" href="styles/styles.css">
+
+        <!-- MapLibreGL's css-->
+        <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" />
+
+        <!-- MapLibreGL's JavaScript-->
+        <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+        
+    </head>
+
+    <body>
+        <header>
+            COVID Vaccination Stories
+        </header>
+
+        <main>
+            <div class="portfolio">
+                <div id="contents"></div>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdezFUSOMG-A4egv2t5tp34ifMnqzTh7_H-QIhzcG3GhjahNg/viewform?embedded=true" width="640" height="727" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+            <div id="map"></div>
+        </main>
+        <div id="footer">
+            Copyright(2024)
+        </div>
+        <script src="js/init.js"></script>
+    </body>
+</html>

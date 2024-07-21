@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Best Vietnamese Coffee in SoCal (7 Leaves)</title>
+        <!-- hint: remember to change your page title! -->
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="#">
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+        <link rel="stylesheet" href="styles/style.css">
+
+        <!-- MapLibreGL's css-->
+        <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" />
+
+        <!-- MapLibreGL's JavaScript-->
+        <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+    </head>
+
+    <body>
+        <nav>
+            <input id="nav-toggle" type="checkbox">
+            <div class = "logo">
+                <img class="logo" src="VietnameseCoffeeNavLogo.png">
+            </div>
+            
+            <!--Creating Links to each HTML file for navigation bar-->
+            <ul class="links">
+                <li><a href="./index.html">7Leaves</a></li>
+                <li><a href="./davien.html">Da Vien</a></li>
+                <li><a href="./phinsmith.html">Phin Smith</a></li>
+                <li><a href="./yummy.html">Yummy Bakery</a></li>
+            </ul>
+        </nav>
+
+        <header>
+            Finding the best Vietnamese Coffee in SoCal!
+            <!-- hint: you can make a menu with other links here if you'd like -->
+        </header>
+
+        <main>
+            <div class="portfolio">
+                <div id="contents"></div>
+                <!-- Portfolio content goes here -->
+                 <br>
+                 <h1>7Leaves</h1>
+                 <br>
+                 <p>
+                    7Leaves' house coffee, which is a version of Cafe Sua Da topped off with sea salt cream, is one of their signature drinks! 7Leaves can also 
+                    serve as your typical boba shop because of their other selection in delicious drinks (with toppings like boba and aloe vera :D).
+                    There are numerous 7Leaves locations across SoCal, so luckily, there is a strong likelihood that if you're anywhere in the LA/OC area, you'll find a location near you.
+                    Use the buttons above to explore all the different 7Leaves locations :D
+                </p>
+                    <br>
+                    <p>Here are some other popular/signature drinks served at 7Leaves: 
+                    </p>
+                    <br>
+                        <div id="infoLists"><ul>
+                            <li>&emsp;Sea Cream Tea Jasmine</li>
+                            <li>&emsp;Strawberry Hibiscus Tea</li>
+                            <li>&emsp;Mung Bean Milk Tea</li>
+                            <li>&emsp;Sunset Passion</li>
+                            <li>&emsp;Japanese Matcha and Soy</li>
+                        </ul>
+                    </div> 
+                    <br>
+                <p>
+                    You can find their menu on their website <a href="https://7leavescafe.com/" target="_blank">here</a> 
+
+                </p>
+
+                <img src="htmlphotos/7Leaves.jpg" alt="7Leaves Image">
+
+            </div>
+            <div id="map"></div>
+        </main>
+        <div id="footer">
+            Copyright(2024)
+        </div>
+        <script src="js/init.js"></script>
+    </body>
+</html>

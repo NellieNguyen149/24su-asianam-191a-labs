@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Best Vietnamese Coffee in SoCal (Yummy Bakery)</title>
+        <!-- hint: remember to change your page title! -->
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="#">
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+        <link rel="stylesheet" href="styles/style.css">
+
+        <!-- MapLibreGL's css-->
+        <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" />
+
+        <!-- MapLibreGL's JavaScript-->
+        <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+    </head>
+
+    <body>
+        <nav class="css-selector">
+            <input id="nav-toggle" type="checkbox">
+            <div class = "logo">
+                <img class="logo" src="VietnameseCoffeeNavLogo.png">
+            </div>
+            
+            <!--Creating Links to each HTML file for navigation bar-->
+            <ul class="links">
+                <li><a href="./index.html">7Leaves</a></li>
+                <li><a href="./davien.html">Da Vien</a></li>
+                <li><a href="./phinsmith.html">Phin Smith</a></li>
+                <li><a href="./yummy.html">Yummy Bakery</a></li>
+            </ul>
+        </nav>
+
+        <header>
+            Where to find the best Vietnamese Coffee in SoCal!
+            <!-- hint: you can make a menu with other links here if you'd like -->
+        </header>
+
+        <main>
+            <div class="portfolio">
+                <div id="contents"></div>
+                <br>
+                <h1>Yummy Bakery</h1>
+                <br>
+                <p>
+                   Besides Yummy Bakery's very yummy (ahha...) coffee, many people also enjoy their food options, like 
+                   the Vietnamese sandwiches (Banh Mi) and steamed pork buns (Banh Bao). While they do have a more narrow drink 
+                   selection, they make up for it in the quality of coffee AND food. Yummy Bakery's signature House coffee does not disappoint. It's 
+                   as if their coffee is made directly in Vietnam! Most of the locations are also centered around Little
+                   Saigon due to the large population of Vietnamese Americans, but new locations are rapidly popping up in the SoCal area!
+               </p>
+                   <br>
+                   <p>Here are some other popular/signature drinks AND dishes served at Yummy Bakery: 
+                   </p>
+                   <br>
+                       <div id="infoLists"><ul>
+                           <li>&emsp;Banh Bao w/ Pork and Salted Duck Egg</li>
+                           <li>&emsp;Combination Bao</li>
+                           <li>&emsp;Banh Mi Yummy</li>
+                           <li>&emsp;Vietnamese Three Color Dessert (Che Ba Mau)</li>
+                           <li>&emsp;Thai tea</li>
+                       </ul>
+                   </div> 
+                   <br>
+               <p>
+                   There is no official website, but you can find their menu on Yelp here! <a href="https://www.yelp.com/biz/yummy-bakery-westminster-8" target="_blank">here</a> 
+
+               </p>
+
+               <img src="htmlphotos/YummyBakery.jpg" alt="Yummy Bakery Image">
+
+            </div>
+            <div id="map"></div>
+        </main>
+        <div id="footer">
+            Copyright(2024)
+        </div>
+        <script src="js/yummy.js"></script>
+    </body>
+</html>

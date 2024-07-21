@@ -48,18 +48,6 @@ main {
     grid-area: main; /* Assigns the main content to its grid area */
 }
 
-a {
-    color: rgb(255, 255, 255) 
-}
-
-a:hover {
-    color: rgb(204, 211, 202)
-}
-
-a:active {
-    color: rgb(203, 104, 239) 
-}
-
 .portfolio {
     grid-area: portfolio; /* Assigns the portfolio section to its grid area */
     color: rgb(255, 255, 255); /* Changing all font color to white */
