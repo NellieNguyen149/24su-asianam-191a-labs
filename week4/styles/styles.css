@@ -1,65 +1,199 @@
+/* The * selects everything and acts as a global reset to ensure consistency across browsers */
 * {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: 'Lato';
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+    box-sizing: border-box; /* Makes sure borders and paddings are included in the element's total width and height */
 }
 
+/* Sets the background color of the whole page and ensures content fits the screen height */
 html {
-    background-color: aqua;
+    background-color: rgb(181, 192, 208); /* Sets a light purple/lavender background color */
 }
 
+/* Applies to both <html> and <body> */
 html, body {
-    height: 80vh;
-    padding: 1rem;
-    box-sizing: border-box;
+    height: 80vh; /* Sets the height to 80% of the viewport height, making sure the content fits on the screen */
+    padding: 1rem; /* Adds a bit of space around the content for better readability */
+    box-sizing: border-box; /* Ensures padding does not add to the set height */
 }
 
+/* Defines the main layout of the page using CSS Grid */
 body {
-    display: grid;
+    position: relative;
+    padding-top: 135px;
+    display: grid; /* Enables CSS Grid layout */
     grid-template-areas: 
-        "header" 
-        "main"  
-        "footer"; 
-    grid-template-rows: auto 1fr auto;
+        "navbar" /*Upper top area for header */
+        "header" /* Top area for the header */
+        "main"   /* Middle area for the main content */
+        "legend" /* Under map main content */
+        "footer"; /* Bottom area for the footer */
+    grid-template-rows: auto 1fr auto; /* Sizes: auto for header and footer to fit content, 1fr for main to fill remaining space */
 }
 
+/* Sets up the layout for the main content area, dividing it into two columns */
 main {
-    display: grid;
-    grid-template-areas:
-        "portfolio map";
-    grid-template-columns: 1fr 1fr;
-    grid-area: main;
+    display: grid; /* Enables CSS Grid within the main element */
+    grid-template-areas: 
+        "portfolio map"
+        "portfolio legend"; /* Divides the main area into portfolio and map sections side by side */
+    grid-template-columns: 1fr 1fr; /* Allocates equal width to both sections */
+    grid-template-rows: auto 1fr;
+    gap: 20px;
 }
 
+
+/* Grid area assignments for each major section, linking them to their respective areas in the grid */
 header { 
-    grid-area: header;
+    grid-area: header; /* Assigns the header to its grid area */
+    font-size: xxx-large;
+    font-weight: 500; 
+    color: rgb(255, 255, 255);
+    padding-bottom: 15px;
 }
+
+main { 
+    grid-area: main; /* Assigns the main content to its grid area */
+}
+
+p {
+    font-size: 22px;
+    overflow: hidden;
+}
+
+/* Changing font color of links*/
+a:link {
+    color: white;
+}
+
+/* Changing font color of links after clicking on them*/
+a:visited {
+    color: rgb(154, 154, 154);
+}
+
+a:hover{
+    color: rgb(154, 154, 154); 
+}
+
+/*Ensuring bullet point style is contained to only paragraphs*/
+.portfolio li {
+    padding-left: 50px;
+    color: white;
+    list-style-type: '♠';
+    list-style-position: inside;
+    font-size: 22px;
+    overflow: hidden;
+}
+
 
 .portfolio {
-    grid-area: portfolio;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    grid-area: portfolio; /* Assigns the portfolio section to its grid area */
+    color: rgb(255, 255, 255); /* Changing all font color to white */
+    border: solid 10px rgb(245, 232, 221); /* Creating border for body section*/
+    border-radius: 25px;
+    padding: 30px;
+    position: relative; /* Relative positioning for absolute positioning inside */
+    overflow: hidden; /* Content does not overflow */
 }
+
+/* If you see this comment, please know I have battled for a few hours trying to figure out 
+how to make it so the image doesn't cover the text. I have unforutnately not won D: I apologize. */
+.portfolio img {
+    position: absolute; /* Position the image absolutely within portfolio */
+    float: right;
+    bottom: 0; /* Align the image to the bottom */
+    right: 0; /* Align the image to the right */
+    margin-bottom: 65px; /* Add margin for spacing */
+    margin-right: 30px; /* Add margin for spacing */
+    max-width: 31%; /* Ensure the image resizes to fit within the available space */
+    max-height: 28%; /* Ensure the image resizes to fit within the available space */
+    object-fit: contain; /* Maintain aspect ratio */
+    border: 4px solid rgb(154, 154, 154);
+    overflow: hidden;
+    border-radius: 10px; /* Add border-radius for image */
+
+}
+
+button {
+    font-weight: 600;
+    font-size: 20px;
+    cursor: grab;
+    color: rgb(181, 192, 208);
+    padding: 5px 5px;
+    border: solid 3px rgb(154, 154, 154);
+    border-radius: 5px;
+    overflow: visible;
+    display: inline-block;
+    text-align: center;
+    width: 135px; 
+    height: 75px;
+}
+
 
 #map { 
-    grid-area: map;
-    height: 80vh;
+    grid-area: map; /* Assigns the map section to its grid area */
+    height: 80vh; /* Sets the map's height to 80% of the viewport height */
+    margin-left: 5px;
+    border: solid 10px rgb(245, 232, 221);
+    border-radius: 30px;
 }
 
-#footer {
-    grid-area: footer;
-    padding: 5px;
-    background-color: #4677a0;
-    color: #fff;
+#legend {
+    grid-area: legend; /* Assign the legend to its grid area */
+    display: flex;
+    border-radius: 30px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: horizontal; /* Stack items horizontally */
+    padding: 20px; /* Add padding inside the legend */
+    background-color: rgb(181, 192, 208);
+    z-index: 0; /* Ensure the legend is on top of other elements */
+    display: flex;
+    width: 100%; /* Set width to fit the grid column */
+    border: solid 10px rgb(245, 232, 221);
+    padding: 20px; /* Add padding inside the legend */
+
+}
+
+.legendIcon {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.legendIcon img {
+    width: 60px;
+    height: 95px;
+    padding-bottom: 5px;
+}
+
+.legendIcon p {
+    font-size: 17.5px;
     text-align: center;
+    padding: 5px;
+    color: white;
+}
+
+#legend h2 {
+    color: white;
+    font-size: 40px;
+}
+
+#footer { 
+    font-size: 15px; 
+    color: rgb(255, 255, 255); /* changing all font color to white */
+    grid-area: footer; /* Assigns the footer to its grid area */
+    padding-top: 40px;
+    
 }
 
 #contents{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    overflow: hidden;
 }

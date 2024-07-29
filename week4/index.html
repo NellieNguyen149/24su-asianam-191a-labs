@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hello World with MapLibreGl</title>
+        <title>Matcha Lattes</title>
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="#">
         <link rel="stylesheet" href="styles/styles.css">
@@ -11,22 +11,45 @@
 
         <!-- MapLibreGL's JavaScript-->
         <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
         
     </head>
 
     <body>
         <header>
-            COVID Vaccination Stories
+            Matcha Latte Experiences! 🍵🍵
         </header>
 
         <main>
             <div class="portfolio">
                 <div id="contents"></div>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdezFUSOMG-A4egv2t5tp34ifMnqzTh7_H-QIhzcG3GhjahNg/viewform?embedded=true" width="640" height="727" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdezFUSOMG-A4egv2t5tp34ifMnqzTh7_H-QIhzcG3GhjahNg/viewform?embedded=true" width="740" height="827" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
             <div id="map"></div>
+            
+            <div id="legend">
+                <h2>Legend</h2>
+                <div class="legendIcon">
+                    <img src="markerPhotos/ExceptionalMarker.png">
+                    <p>Respondant gives this location an exceptional rating.</p>
+                </div>
+                <div class="legendIcon">
+                    <img class="icon" src="markerPhotos/SatisfactoryMarker.png">
+                    <p>Respondant gives this location a satisfactory rating.</p>
+                </div>
+                <div class="legendIcon">
+                    <img class="icon" src="markerPhotos/AverageMarker.png">
+                    <p>Respondant gives this location an average rating.</p>
+                </div>
+                <div class="legendIcon">
+                    <img class="icon" src="markerPhotos/UnsatisfactoryMarker.png">
+                    <p>Respondant gives this location an unsatisfactory rating.</p>
+                </div>
+                <div class="legendIcon">
+                    <img class="icon" src="markerPhotos/AwfulMarker.png">
+                    <p>Respondant gives this location an awful rating.</p>
+                </div>
+            </div>
         </main>
         <div id="footer">
             Copyright(2024)
