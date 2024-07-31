@@ -19,6 +19,13 @@ window.onclick = function (event) {
 // declare variables
 let mapOptions = { 'centerLngLat': [-118.444, 34.0709], 'startingZoomLevel': 8 }
 
+// this is to retrieve all of the data when we need it
+let allData = [];
+
+// this is to store data by category
+let categorizedData = [];
+
+
 const map = new maplibregl.Map({
     container: 'map', // container ID
     style: 'https://api.maptiler.com/maps/bright/style.json?key=JWrMVIrr3Jz2WGVMeDwh', // Your style URL
@@ -114,9 +121,39 @@ map.on('load', function () {
         complete: function (results) {
             // Process the parsed data
             processData(results.data); // Use a new function to handle CSV data
+            summarizeCategorizedData();
+            addToHtmlCategoryData()
         }
     });
+
 });
+
+//     /\_____/\
+//    /  o   o  \   <---I AM A setData-CAT-EGORY function😿😿😿😿
+//   ( ==  ^  == )
+//    )         (
+//   (           )
+//  ( (  )   (  ) )
+// (__(__)___(__)__)
+
+function setDataCategory(feature) {
+    // categorize data to store based on satisfied, somewhat, and unsatisfied
+    let fridgeAccess = feature['Do you feel you have enough access to fridges for storing meals on campus? '];
+    let microwaveAccess = feature['Do you feel you have enough access to microwaves for reheating meals on campus?'];
+    let thisCategory;
+    if (fridgeAccess == "Yes" && microwaveAccess == "Yes") {
+        thisCategory = "satisfied";
+    }
+    else if (fridgeAccess == "No" && microwaveAccess == "No")
+        {
+        thisCategory = "unsatisfied";
+    }
+    else {
+        thisCategory = "somewhat"
+    }
+    return thisCategory;
+}
+
 
 function processData(results) {
     console.log(results) //for debugging: this can help us see if the results are what we want
@@ -124,6 +161,7 @@ function processData(results) {
         console.log(feature) // for debugging: are we seeing each feature correctly?
         // assumes your geojson has a "title" and "message" attribute
         // let coordinates = feature.geometry.coordinates;
+        let newFeature = {};
         let longitude = feature['lng'];
         let latitude = feature['lat'];
         let commuterStatus = feature['Do you currently identify as a UCLA commuter student?'];
@@ -133,7 +171,60 @@ function processData(results) {
         let fridgeAccess = feature['Do you feel you have enough access to fridges for storing meals on campus? '];
         let microwaveAccess = feature['Do you feel you have enough access to microwaves for reheating meals on campus?'];
         let experience = feature['Expand on your experiences using refrigeration (storage) and microwave (reheating) on campus, if any'];
-
+        let satificationCategory = setDataCategory(feature);        
+        newFeature['lng'] = longitude;
+        newFeature['lat'] = latitude;
+        newFeature['commuterStatus'] = commuterStatus;
+        newFeature['zipcode'] = zipCode;
+        newFeature['mealPrepStatus'] = mealPrepStatus;
+        newFeature['mealPrepReason'] = mealPrepReason;
+        newFeature['fridgeAccess'] = fridgeAccess;
+        newFeature['microwaveAccess'] = microwaveAccess;
+        newFeature['experience'] = experience;
+        newFeature['satificationCategory'] = satificationCategory;
+        console.log(satificationCategory);
+        allData.push(newFeature);
         addMarker(feature);
     });
 };
+
+// summary counter for category tabs
+function summarizeCategorizedData(){
+    let satisfied = 0;
+    let somewhat = 0;
+    let unsatisfied = 0;
+    console.log('allData')
+    console.log(allData)
+    allData.forEach(feature=>{
+        if(feature.satificationCategory == "satisfied"){
+            satisfied += 1;
+        }
+        else if(feature.satificationCategory == "somewhat"){
+            somewhat += 1;
+        }
+        else{
+            unsatisfied += 1;
+        }
+    })
+
+    let satisifiedCategory = {"category":"satisfied", "count":satisfied};
+    let somewhatCategory = {"category":"somewhat", "count":somewhat};
+    let unsatisfiedCategory = {"category":"unsatisfied", "count":unsatisfied};
+    console.log('satisifiedCategory');
+    console.log(satisifiedCategory);
+    categorizedData.push(satisifiedCategory);
+    categorizedData.push(somewhatCategory);
+    categorizedData.push(unsatisfiedCategory);
+
+}
+
+function addToHtmlCategoryData(){
+    let targetDiv = document.getElementById("categorystuff");
+    let htmlString = "";
+    categorizedData.forEach(category=>{
+        htmlString += `<div class="categorytab" id="${category.category}">${category.category}: ${category.count}</div>`;
+    })
+    targetDiv.innerHTML = htmlString;
+
+    
+}
